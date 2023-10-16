@@ -1,6 +1,6 @@
 {
   "name": "@olyninc/ownership-sdk",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Ownership box JS SDK",
   "main": ".dist/index.js",
   "types": ".dist/ownership-js-sdk.d.ts",
