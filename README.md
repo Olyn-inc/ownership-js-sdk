@@ -19,8 +19,8 @@ Node installation will include NPM, which is responsible for dependency manageme
 
 ## Install
 
-1. `npm install @olyninc/ownership-js-sdk`
-2. `import { OwnershipBox } from "@olyninc/ownership-js-sdk";`
+1. `npm install @olyninc/ownership-sdk`
+2. `import { OwnershipBox } from "@olyninc/ownership-sdk";`
 
 ## Usage
 
@@ -29,7 +29,7 @@ The SDK is designed to simplify handling asynchronous requests made to the API b
 For more information on specific modules, please take a look at the example folder. To help you get started with the SDK, here's a sample to demonstrate its usage.
 
 ```
-import { OwnershipBox } from "@olyn-inc/ownership-js-sdk";
+import { OwnershipBox } from "@olyn-inc/ownership-sdk";
 const ownershipBox = new OwnershipBox({
   shop: "https://mycustomshop.com",
   shopType: "custom",
