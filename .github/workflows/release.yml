@@ -1,0 +1,50 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  release:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [18.x]
+    name: Release
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Create .env with Github Secrets and run script
+        run: |
+          touch .env
+          echo OWNERSHIP_API_URL=$OWNERSHIP_API_URL >> .env
+        env:
+          OWNERSHIP_API_URL: ${{ vars.OWNERSHIP_API_URL }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Install dependecies
+        run: npm ci
+      - name: Node Test
+        run: npm test
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
