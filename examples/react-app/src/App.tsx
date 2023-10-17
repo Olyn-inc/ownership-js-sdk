@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 /** @ts-ignore */
-import { OwnershipBox } from "@olyn-inc/ownership-js-sdk";
+import { OwnershipBox } from "@olyninc/ownership-sdk";
 import { toast } from "react-toastify";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
