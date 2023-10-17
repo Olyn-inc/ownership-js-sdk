@@ -29,6 +29,16 @@ function main() {
     path.join(__dirname, "../dist/.npmignore")
   );
 
+  fs.copyFileSync(
+    path.join(__dirname, "../README.md"),
+    path.join(__dirname, "../dist/README.md")
+  );
+
+  fs.copyFileSync(
+    path.join(__dirname, "../CHANGELOG.md"),
+    path.join(__dirname, "../dist/CHANGELOG.md")
+  );
+
   fs.renameSync(
     path.join(__dirname, "../dist/ownership-sdk.d.ts"),
     path.join(__dirname, "../dist/index.d.ts")
