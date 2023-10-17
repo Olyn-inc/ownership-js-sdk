@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Olyn-inc/ownership-js-sdk/compare/v1.0.1...v1.0.2) (2023-10-17)
+
+
+### Bug Fixes
+
+* include readme in dist folder ([07a0c4d](https://github.com/Olyn-inc/ownership-js-sdk/commit/07a0c4d2b6dbe77070c8cbd1d15ddd924ea0900f))
+
 ## [1.0.1](https://github.com/Olyn-inc/ownership-js-sdk/compare/v1.0.0...v1.0.1) (2023-10-17)
 
 
